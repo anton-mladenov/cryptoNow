@@ -1,4 +1,4 @@
-const {request} = require("superagent")
+const request = require("superagent")
 const { baseUrl } = require("../constants")
 
 const resolvers = {
