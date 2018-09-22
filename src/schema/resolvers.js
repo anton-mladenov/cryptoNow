@@ -6,7 +6,8 @@ const resolvers = {
 		coin: async (obj, args, context, info) => {
 
 			let coinInfoRequest = await request
-				.get(`${baseUrl}/v1/exchangerate/${args.name}/USD`)
+				// .get(`${baseUrl}/v1/exchangerate/${args.name}/USD`)
+				.get(`${baseUrl}/v1/exchangerate/BTC/USD`)
 				.set("Accept", "application/json")
 				.set("X-CoinAPI-Key", "5A8FC430-49B3-4605-9A41-6D472847AE30")
 				.set("Accept-Encoding", "deflate, gzip")

@@ -17,3 +17,5 @@ server.applyMiddleware({app})
 app.listen(port, () => {
 	console.log(`🚀 Server ready at ${server.graphqlPath}`)
 })
+
+// http://localhost:4000/graphql?query={coin{rate}}
