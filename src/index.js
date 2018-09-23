@@ -1,5 +1,4 @@
 
-const cors = require("cors")
 const express = require("express")
 const { ApolloServer } = require('apollo-server-express')
 const { typeDefs } = require("./schema/types")
@@ -11,15 +10,9 @@ const app = express()
 const port = 4000
 const encodedBodyParser = bodyParser.urlencoded({ extended: false })
 
-// app.use(cors())
 app.use(encodedBodyParser)
 
-app.use("/coinprice", router)
-
-// app.post("/graphql", encodedBodyParser, (req, res, next) => {
-//     console.log("REQ BODY: ", req.body)
-//     next()
-// }) 
+app.use("/coinprice", router) 
 
 const server = new ApolloServer({
 	typeDefs,
@@ -32,4 +25,4 @@ app.listen(port, () => {
 	console.log(`🚀 Server ready at ${server.graphqlPath}`)
 })
 
-// http://localhost:4000/graphql?query={coin(name:"ETH"){rate time}}
+// http://localhost:4000/graphql?query={coin(name:"ETH"){rate time}} - that's a URL query string version of calling a graphql query over http

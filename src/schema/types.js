@@ -8,7 +8,6 @@ interface BasicCoinInfo {
 
 type Query {
 	coin(name: String): Coin
-	#coin: Coin
 }
 
 type Coin implements BasicCoinInfo {
